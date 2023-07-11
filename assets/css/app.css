@@ -1,0 +1,47 @@
+.categorychecklist li ul,
+.categorychecklist li .children {
+  display: none;
+}
+.categorychecklist li {
+	position: relative;
+}
+.as__panel{
+	display: flex;
+	position: absolute;
+	right: 4px;
+	top: 2px;
+}
+.as__panel__input__row{
+	display: flex;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+.as__panel__input__col,.as__panel__col{
+flex:0 0 auto;
+}
+.as__panel__input__col:not(:last-child){
+margin-right: 5px;
+}
+.has-children{
+			cursor: pointer;
+			width: 12px;
+			height: 12px;
+			background-color: rgb(34 113 176);
+			border: 2px solid rgb(173 225 255);
+			font-size: .8rem;
+			color: white;
+			text-align: center;	
+}
+
+.has-children:before {
+  content: '+';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.has-children.open:before {
+  content: '-';
+}
