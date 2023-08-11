@@ -1,42 +1,97 @@
+
 .categorychecklist li ul,
 .categorychecklist li .children {
   display: none;
 }
+
+.as__panel__input__col_add input{
+	
+	display:block;
+}
+.as__panel__input__col_add input:not(:first-child){
+	
+	margin-top:11px;
+}
+
 .categorychecklist li {
 	position: relative;
 }
 .as__panel{
 	display: flex;
 	position: absolute;
-	right: 4px;
+	right: 2px;
+	z-index:1;
 	top: 2px;
 }
 .as__panel__input__row{
-	display: flex;
+	display: none;
 	position: absolute;
-	right: 0px;
+	left: 0px;
 	top: 0px;
+	background:#fff;
+	z-index:2;
 }
 .as__panel__input__col,.as__panel__col{
 flex:0 0 auto;
 }
+
+.as__panel__col{
+margin-right: 0px;	
+}
+.as__panel__col:not(:last-child){
+margin-right: 5px;	
+}
 .as__panel__input__col:not(:last-child){
 margin-right: 5px;
 }
-.has-children{
+
+.as__panel__cot_add,.as__panel__cot_del,.as__panel__cot__edit,.has-children{
+	position:relative;
 			cursor: pointer;
-			width: 12px;
-			height: 12px;
-			background-color: rgb(34 113 176);
-			border: 2px solid rgb(173 225 255);
+			width: 17px;
+			height: 17px;
+	        display:flex;
+	align-items:center;
+	justify-content:center;
+				background-color: rgb(34 113 176);
 			font-size: .8rem;
 			color: white;
 			text-align: center;	
 }
+.as__panel__cot_del{
+	background-color: rgb(176, 34, 34);
 
-.has-children:before {
-  content: '+';
+}
+.as__panel__cot__edit{
+	background-color: rgb(34, 176, 91);
+}
+
+.as__panel__cot_add{
+	background-color: #0B2B40;
+	
+}
+
+.as__panel__cot_add svg,.as__panel__cot__edit svg{
+pointer-events:none;
+	width: 0.9rem;
+	height: auto;
+}
+.as__panel__cot_add svg{
+	width: 0.7rem;
+	pointer-events:none;
+}
+.as__panel__cot_del::before{
+	content: 'x';
+
+}
+
+
+.has-children:before{
+	content: '+';
+}
+.as__panel__cot__edit svg,.as__panel__cot_del::before,.has-children:before {
 	position: absolute;
+	
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%);
